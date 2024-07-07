@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "passages",
+  "info": {
+    "singularName": "passage",
+    "pluralName": "passages",
+    "displayName": "Passage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order": {
+      "type": "integer"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "img": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "test": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::test.test",
+      "inversedBy": "passages"
+    },
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question",
+      "mappedBy": "passage"
+    }
+  }
+}
