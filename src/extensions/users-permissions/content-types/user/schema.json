@@ -74,7 +74,7 @@
     "authen": {
       "type": "enumeration",
       "enum": [
-        "admin",
+        "Admin",
         "user"
       ],
       "required": true

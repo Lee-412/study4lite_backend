@@ -728,7 +728,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::student-test.student-test'
     >;
-    authen: Attribute.Enumeration<['admin', 'user']> & Attribute.Required;
+    authen: Attribute.Enumeration<['Admin', 'user']> & Attribute.Required;
     fullname: Attribute.String & Attribute.Required;
     answer_wrtings: Attribute.Relation<
       'plugin::users-permissions.user',
