@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tests",
+  "info": {
+    "singularName": "test",
+    "pluralName": "tests",
+    "displayName": "Test",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Start": {
+      "type": "datetime"
+    },
+    "End": {
+      "type": "datetime"
+    },
+    "Duration": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Reading",
+        "Listening",
+        "Wrting"
+      ],
+      "required": true
+    },
+    "student_tests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student-test.student-test",
+      "mappedBy": "test"
+    },
+    "passages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::passage.passage",
+      "mappedBy": "test"
+    },
+    "audio": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::audio.audio",
+      "mappedBy": "test"
+    },
+    "wrting": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wrting.wrting",
+      "mappedBy": "test"
+    }
+  }
+}

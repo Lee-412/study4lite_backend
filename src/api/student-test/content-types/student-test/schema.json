@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "student_tests",
+  "info": {
+    "singularName": "student-test",
+    "pluralName": "student-tests",
+    "displayName": "student_test",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "score": {
+      "type": "integer",
+      "required": true
+    },
+    "Time_finish": {
+      "type": "biginteger",
+      "required": true
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "student_tests"
+    },
+    "test": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::test.test",
+      "inversedBy": "student_tests"
+    }
+  }
+}

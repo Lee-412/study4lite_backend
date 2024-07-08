@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "questions",
+  "info": {
+    "singularName": "question",
+    "pluralName": "questions",
+    "displayName": "Question"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "questionaire": {
+      "type": "text",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "multiplechoice",
+        "filling"
+      ],
+      "required": true
+    },
+    "passage": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::passage.passage",
+      "inversedBy": "questions"
+    },
+    "audio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::audio.audio",
+      "inversedBy": "questions"
+    }
+  }
+}

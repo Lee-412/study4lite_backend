@@ -75,7 +75,11 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
+<<<<<<< HEAD
 
+=======
+!public/uploads/.gitkeep
+>>>>>>> 07512f6b4c800fa171a71c117e10b616994e528d
 
 ############################
 # Node.js
@@ -99,6 +103,10 @@ coverage
 # Strapi
 ############################
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 07512f6b4c800fa171a71c117e10b616994e528d
 license.txt
 exports
 .strapi

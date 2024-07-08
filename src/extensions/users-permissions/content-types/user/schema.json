@@ -65,12 +65,37 @@
       "inversedBy": "users",
       "configurable": false
     },
+<<<<<<< HEAD
+=======
+    "student_tests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student-test.student-test",
+      "mappedBy": "user"
+    },
+>>>>>>> 07512f6b4c800fa171a71c117e10b616994e528d
     "authen": {
       "type": "enumeration",
       "enum": [
         "Admin",
+<<<<<<< HEAD
         "User"
       ]
+=======
+        "user"
+      ],
+      "required": true
+    },
+    "fullname": {
+      "type": "string",
+      "required": true
+    },
+    "answer_wrtings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::answer-wrting.answer-wrting",
+      "mappedBy": "users_permissions_user"
+>>>>>>> 07512f6b4c800fa171a71c117e10b616994e528d
     }
   }
 }
