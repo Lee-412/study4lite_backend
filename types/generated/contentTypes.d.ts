@@ -823,6 +823,10 @@ export interface ApiAnswerWrtingAnswerWrting extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    wordcount1: Attribute.BigInteger & Attribute.Required;
+    wordcount2: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.DefaultTo<'0'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1137,8 +1141,6 @@ export interface ApiWrtingWrting extends Schema.CollectionType {
     task2: Attribute.Text & Attribute.Required;
     img1: Attribute.Media<'images' | 'files', true>;
     img2: Attribute.Media<'images' | 'files', true>;
-    wordCount1: Attribute.BigInteger & Attribute.Required;
-    wordCount2: Attribute.BigInteger & Attribute.Required;
     test: Attribute.Relation<
       'api::wrting.wrting',
       'oneToOne',

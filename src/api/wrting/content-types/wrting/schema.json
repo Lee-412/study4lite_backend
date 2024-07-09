@@ -38,14 +38,6 @@
         "files"
       ]
     },
-    "wordCount1": {
-      "type": "biginteger",
-      "required": true
-    },
-    "wordCount2": {
-      "type": "biginteger",
-      "required": true
-    },
     "test": {
       "type": "relation",
       "relation": "oneToOne",
