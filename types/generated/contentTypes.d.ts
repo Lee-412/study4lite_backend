@@ -890,12 +890,19 @@ export interface ApiFillingFilling extends Schema.CollectionType {
     singularName: 'filling';
     pluralName: 'fillings';
     displayName: 'filling';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     correctAnswer: Attribute.Text & Attribute.Required;
+    question: Attribute.Relation<
+      'api::filling.filling',
+      'manyToOne',
+      'api::question.question'
+    >;
+    optional_question: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -931,6 +938,12 @@ export interface ApiMultiplechoiceMultiplechoice extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<false>;
     type: Attribute.Enumeration<['multiplechoice', 'matchingheading', 'TFN']>;
+    question: Attribute.Relation<
+      'api::multiplechoice.multiplechoice',
+      'manyToOne',
+      'api::question.question'
+    >;
+    optional_question: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -998,12 +1011,12 @@ export interface ApiQuestionQuestion extends Schema.CollectionType {
     singularName: 'question';
     pluralName: 'questions';
     displayName: 'Question';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    questionaire: Attribute.Text & Attribute.Required;
     type: Attribute.Enumeration<['multiplechoice', 'filling']> &
       Attribute.Required;
     passage: Attribute.Relation<
@@ -1016,6 +1029,17 @@ export interface ApiQuestionQuestion extends Schema.CollectionType {
       'manyToOne',
       'api::audio.audio'
     >;
+    multiplechoices: Attribute.Relation<
+      'api::question.question',
+      'oneToMany',
+      'api::multiplechoice.multiplechoice'
+    >;
+    fillings: Attribute.Relation<
+      'api::question.question',
+      'oneToMany',
+      'api::filling.filling'
+    >;
+    questionaire: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

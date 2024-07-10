@@ -28,6 +28,15 @@
         "matchingheading",
         "TFN"
       ]
+    },
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "multiplechoices"
+    },
+    "optional_question": {
+      "type": "string"
     }
   }
 }

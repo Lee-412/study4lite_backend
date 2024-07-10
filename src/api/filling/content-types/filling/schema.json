@@ -4,7 +4,8 @@
   "info": {
     "singularName": "filling",
     "pluralName": "fillings",
-    "displayName": "filling"
+    "displayName": "filling",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,6 +15,15 @@
     "correctAnswer": {
       "type": "text",
       "required": true
+    },
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "fillings"
+    },
+    "optional_question": {
+      "type": "string"
     }
   }
 }
