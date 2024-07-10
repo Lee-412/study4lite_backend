@@ -1070,7 +1070,7 @@ export interface ApiStudentTestStudentTest extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    score: Attribute.Integer & Attribute.Required;
+    score: Attribute.Integer & Attribute.DefaultTo<0>;
     Time_finish: Attribute.BigInteger & Attribute.Required;
     date: Attribute.DateTime & Attribute.Required;
     user: Attribute.Relation<
