@@ -977,11 +977,6 @@ export interface ApiPassagePassage extends Schema.CollectionType {
     order: Attribute.Integer;
     content: Attribute.RichText & Attribute.Required;
     img: Attribute.Media<'images' | 'files', true>;
-    test: Attribute.Relation<
-      'api::passage.passage',
-      'manyToOne',
-      'api::test.test'
-    >;
     questions: Attribute.Relation<
       'api::passage.passage',
       'oneToMany',
@@ -1078,6 +1073,11 @@ export interface ApiReadingTestReadingTest extends Schema.CollectionType {
         'ielts-reading.questionair'
       ]
     >;
+    test: Attribute.Relation<
+      'api::reading-test.reading-test',
+      'oneToOne',
+      'api::test.test'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1162,11 +1162,6 @@ export interface ApiTestTest extends Schema.CollectionType {
       'oneToMany',
       'api::student-test.student-test'
     >;
-    passages: Attribute.Relation<
-      'api::test.test',
-      'oneToMany',
-      'api::passage.passage'
-    >;
     audio: Attribute.Relation<
       'api::test.test',
       'oneToMany',
@@ -1176,6 +1171,11 @@ export interface ApiTestTest extends Schema.CollectionType {
       'api::test.test',
       'oneToOne',
       'api::wrting.wrting'
+    >;
+    reading_test: Attribute.Relation<
+      'api::test.test',
+      'oneToOne',
+      'api::reading-test.reading-test'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

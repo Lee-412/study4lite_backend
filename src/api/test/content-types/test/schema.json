@@ -41,12 +41,6 @@
       "target": "api::student-test.student-test",
       "mappedBy": "test"
     },
-    "passages": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::passage.passage",
-      "mappedBy": "test"
-    },
     "audio": {
       "type": "relation",
       "relation": "oneToMany",
@@ -57,6 +51,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::wrting.wrting",
+      "mappedBy": "test"
+    },
+    "reading_test": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reading-test.reading-test",
       "mappedBy": "test"
     }
   }

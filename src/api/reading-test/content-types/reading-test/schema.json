@@ -20,6 +20,12 @@
         "ielts-reading.paragraph",
         "ielts-reading.questionair"
       ]
+    },
+    "test": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::test.test",
+      "inversedBy": "reading_test"
     }
   }
 }
