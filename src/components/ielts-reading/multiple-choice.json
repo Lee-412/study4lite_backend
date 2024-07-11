@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_ielts_reading_multiple_choices",
+  "info": {
+    "displayName": "Multiple Choice",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Choices": {
+      "type": "json"
+    },
+    "Answer": {
+      "type": "string"
+    },
+    "Question": {
+      "type": "text"
+    }
+  }
+}

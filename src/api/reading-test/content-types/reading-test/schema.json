@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reading_tests",
+  "info": {
+    "singularName": "reading-test",
+    "pluralName": "reading-tests",
+    "displayName": "Reading_Test",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ReadingComponent": {
+      "type": "dynamiczone",
+      "components": [
+        "ielts-reading.filling",
+        "ielts-reading.multiple-choice",
+        "ielts-reading.paragraph",
+        "ielts-reading.questionair"
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_ielts_reading_fillings",
+  "info": {
+    "displayName": "Filling"
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "text"
+    },
+    "Answer": {
+      "type": "string"
+    }
+  }
+}

@@ -1058,6 +1058,44 @@ export interface ApiQuestionQuestion extends Schema.CollectionType {
   };
 }
 
+export interface ApiReadingTestReadingTest extends Schema.CollectionType {
+  collectionName: 'reading_tests';
+  info: {
+    singularName: 'reading-test';
+    pluralName: 'reading-tests';
+    displayName: 'Reading_Test';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ReadingComponent: Attribute.DynamicZone<
+      [
+        'ielts-reading.filling',
+        'ielts-reading.multiple-choice',
+        'ielts-reading.paragraph',
+        'ielts-reading.questionair'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::reading-test.reading-test',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::reading-test.reading-test',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiStudentTestStudentTest extends Schema.CollectionType {
   collectionName: 'student_tests';
   info: {
@@ -1217,6 +1255,7 @@ declare module '@strapi/types' {
       'api::multiplechoice.multiplechoice': ApiMultiplechoiceMultiplechoice;
       'api::passage.passage': ApiPassagePassage;
       'api::question.question': ApiQuestionQuestion;
+      'api::reading-test.reading-test': ApiReadingTestReadingTest;
       'api::student-test.student-test': ApiStudentTestStudentTest;
       'api::test.test': ApiTestTest;
       'api::wrting.wrting': ApiWrtingWrting;

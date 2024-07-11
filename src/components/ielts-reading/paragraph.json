@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_ielts_reading_paragraphs",
+  "info": {
+    "displayName": "Paragraph",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Content": {
+      "type": "richtext"
+    }
+  }
+}

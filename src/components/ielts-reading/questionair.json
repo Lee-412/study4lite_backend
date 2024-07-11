@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_ielts_reading_questionairs",
+  "info": {
+    "displayName": "Questionair",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Content": {
+      "type": "richtext"
+    }
+  }
+}
