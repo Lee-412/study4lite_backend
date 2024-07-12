@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_ielts_listening_fillings",
+  "info": {
+    "displayName": "filling",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "string"
+    },
+    "Answer": {
+      "type": "string"
+    }
+  }
+}

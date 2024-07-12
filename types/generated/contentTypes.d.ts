@@ -845,207 +845,42 @@ export interface ApiAnswerWrtingAnswerWrting extends Schema.CollectionType {
   };
 }
 
-export interface ApiAudioAudio extends Schema.CollectionType {
-  collectionName: 'audios';
+export interface ApiListeningTestListeningTest extends Schema.CollectionType {
+  collectionName: 'listening_tests';
   info: {
-    singularName: 'audio';
-    pluralName: 'audios';
-    displayName: 'Audio';
+    singularName: 'listening-test';
+    pluralName: 'listening-tests';
+    displayName: 'Listening_Test';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    order: Attribute.Integer;
-    content: Attribute.Media<'videos' | 'audios', true> & Attribute.Required;
-    test: Attribute.Relation<'api::audio.audio', 'manyToOne', 'api::test.test'>;
-    questions: Attribute.Relation<
-      'api::audio.audio',
-      'oneToMany',
-      'api::question.question'
+    Listening: Attribute.DynamicZone<
+      [
+        'ielts-listening.audio',
+        'ielts-listening.questionair',
+        'ielts-listening.filling',
+        'ielts-listening.multiple-choice'
+      ]
+    >;
+    test: Attribute.Relation<
+      'api::listening-test.listening-test',
+      'oneToOne',
+      'api::test.test'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::audio.audio',
+      'api::listening-test.listening-test',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::audio.audio',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiFillingFilling extends Schema.CollectionType {
-  collectionName: 'fillings';
-  info: {
-    singularName: 'filling';
-    pluralName: 'fillings';
-    displayName: 'filling';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    correctAnswer: Attribute.Text & Attribute.Required;
-    question: Attribute.Relation<
-      'api::filling.filling',
-      'manyToOne',
-      'api::question.question'
-    >;
-    optional_question: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::filling.filling',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::filling.filling',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiMultiplechoiceMultiplechoice extends Schema.CollectionType {
-  collectionName: 'multiplechoices';
-  info: {
-    singularName: 'multiplechoice';
-    pluralName: 'multiplechoices';
-    displayName: 'Multiplechoice';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    content: Attribute.Text & Attribute.Required;
-    isCorrect: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
-    type: Attribute.Enumeration<['multiplechoice', 'matchingheading', 'TFN']>;
-    question: Attribute.Relation<
-      'api::multiplechoice.multiplechoice',
-      'manyToOne',
-      'api::question.question'
-    >;
-    optional_question: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::multiplechoice.multiplechoice',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::multiplechoice.multiplechoice',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPassagePassage extends Schema.CollectionType {
-  collectionName: 'passages';
-  info: {
-    singularName: 'passage';
-    pluralName: 'passages';
-    displayName: 'Passage';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    order: Attribute.Integer;
-    content: Attribute.RichText & Attribute.Required;
-    img: Attribute.Media<'images' | 'files', true>;
-    questions: Attribute.Relation<
-      'api::passage.passage',
-      'oneToMany',
-      'api::question.question'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::passage.passage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::passage.passage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiQuestionQuestion extends Schema.CollectionType {
-  collectionName: 'questions';
-  info: {
-    singularName: 'question';
-    pluralName: 'questions';
-    displayName: 'Question';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    type: Attribute.Enumeration<['multiplechoice', 'filling']> &
-      Attribute.Required;
-    passage: Attribute.Relation<
-      'api::question.question',
-      'manyToOne',
-      'api::passage.passage'
-    >;
-    audio: Attribute.Relation<
-      'api::question.question',
-      'manyToOne',
-      'api::audio.audio'
-    >;
-    multiplechoices: Attribute.Relation<
-      'api::question.question',
-      'oneToMany',
-      'api::multiplechoice.multiplechoice'
-    >;
-    fillings: Attribute.Relation<
-      'api::question.question',
-      'oneToMany',
-      'api::filling.filling'
-    >;
-    questionaire: Attribute.RichText;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::question.question',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::question.question',
+      'api::listening-test.listening-test',
       'oneToOne',
       'admin::user'
     > &
@@ -1162,11 +997,6 @@ export interface ApiTestTest extends Schema.CollectionType {
       'oneToMany',
       'api::student-test.student-test'
     >;
-    audio: Attribute.Relation<
-      'api::test.test',
-      'oneToMany',
-      'api::audio.audio'
-    >;
     wrting: Attribute.Relation<
       'api::test.test',
       'oneToOne',
@@ -1176,6 +1006,11 @@ export interface ApiTestTest extends Schema.CollectionType {
       'api::test.test',
       'oneToOne',
       'api::reading-test.reading-test'
+    >;
+    listening_test: Attribute.Relation<
+      'api::test.test',
+      'oneToOne',
+      'api::listening-test.listening-test'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1250,11 +1085,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::answer-wrting.answer-wrting': ApiAnswerWrtingAnswerWrting;
-      'api::audio.audio': ApiAudioAudio;
-      'api::filling.filling': ApiFillingFilling;
-      'api::multiplechoice.multiplechoice': ApiMultiplechoiceMultiplechoice;
-      'api::passage.passage': ApiPassagePassage;
-      'api::question.question': ApiQuestionQuestion;
+      'api::listening-test.listening-test': ApiListeningTestListeningTest;
       'api::reading-test.reading-test': ApiReadingTestReadingTest;
       'api::student-test.student-test': ApiStudentTestStudentTest;
       'api::test.test': ApiTestTest;

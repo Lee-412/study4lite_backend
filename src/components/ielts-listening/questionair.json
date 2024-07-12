@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ielts_listening_questionairs",
+  "info": {
+    "displayName": "questionair"
+  },
+  "options": {},
+  "attributes": {
+    "Questionaire": {
+      "type": "richtext"
+    }
+  }
+}

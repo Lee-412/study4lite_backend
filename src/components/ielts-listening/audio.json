@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_ielts_listening_audio",
+  "info": {
+    "displayName": "audio"
+  },
+  "options": {},
+  "attributes": {
+    "Audio": {
+      "allowedTypes": [
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
