@@ -862,7 +862,8 @@ export interface ApiListeningTestListeningTest extends Schema.CollectionType {
         'ielts-listening.audio',
         'ielts-listening.questionair',
         'ielts-listening.filling',
-        'ielts-listening.multiple-choice'
+        'ielts-listening.multiple-choice',
+        'ielts-listening.image'
       ]
     >;
     test: Attribute.Relation<

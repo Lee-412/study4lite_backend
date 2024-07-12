@@ -1,14 +1,14 @@
 {
-  "collectionName": "components_file_media",
+  "collectionName": "components_ielts_listening_images",
   "info": {
-    "displayName": "media"
+    "displayName": "image"
   },
   "options": {},
   "attributes": {
-    "audio_file": {
+    "img": {
       "allowedTypes": [
-        "videos",
-        "audios"
+        "images",
+        "files"
       ],
       "type": "media",
       "multiple": true
