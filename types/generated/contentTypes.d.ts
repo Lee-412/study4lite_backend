@@ -859,11 +859,11 @@ export interface ApiListeningTestListeningTest extends Schema.CollectionType {
   attributes: {
     Listening: Attribute.DynamicZone<
       [
-        'ielts-listening.audio',
         'ielts-listening.questionair',
         'ielts-listening.filling',
         'ielts-listening.multiple-choice',
-        'ielts-listening.image'
+        'ielts-listening.audio-url',
+        'ielts-listening.img-url'
       ]
     >;
     test: Attribute.Relation<
@@ -906,7 +906,8 @@ export interface ApiReadingTestReadingTest extends Schema.CollectionType {
         'ielts-reading.filling',
         'ielts-reading.multiple-choice',
         'ielts-reading.paragraph',
-        'ielts-reading.questionair'
+        'ielts-reading.questionair',
+        'ielts-reading.image'
       ]
     >;
     test: Attribute.Relation<

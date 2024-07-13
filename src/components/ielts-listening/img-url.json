@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ielts_listening_img_urls",
+  "info": {
+    "displayName": "img_url"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ielts_reading_images",
+  "info": {
+    "displayName": "image"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    }
+  }
+}

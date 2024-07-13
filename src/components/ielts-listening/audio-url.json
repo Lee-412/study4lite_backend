@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ielts_listening_audio_urls",
+  "info": {
+    "displayName": "audio_url"
+  },
+  "options": {},
+  "attributes": {
+    "Url": {
+      "type": "richtext"
+    }
+  }
+}

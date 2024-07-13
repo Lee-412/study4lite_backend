@@ -1,5 +1,15 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface IeltsListeningAudioUrl extends Schema.Component {
+  collectionName: 'components_ielts_listening_audio_urls';
+  info: {
+    displayName: 'audio_url';
+  };
+  attributes: {
+    Url: Attribute.RichText;
+  };
+}
+
 export interface IeltsListeningAudio extends Schema.Component {
   collectionName: 'components_ielts_listening_audio';
   info: {
@@ -29,6 +39,16 @@ export interface IeltsListeningImage extends Schema.Component {
   };
   attributes: {
     img: Attribute.Media<'images' | 'files', true>;
+  };
+}
+
+export interface IeltsListeningImgUrl extends Schema.Component {
+  collectionName: 'components_ielts_listening_img_urls';
+  info: {
+    displayName: 'img_url';
+  };
+  attributes: {
+    url: Attribute.String;
   };
 }
 
@@ -63,6 +83,16 @@ export interface IeltsReadingFilling extends Schema.Component {
   attributes: {
     Question: Attribute.Text;
     Answer: Attribute.String;
+  };
+}
+
+export interface IeltsReadingImage extends Schema.Component {
+  collectionName: 'components_ielts_reading_images';
+  info: {
+    displayName: 'image';
+  };
+  attributes: {
+    url: Attribute.String;
   };
 }
 
@@ -104,12 +134,15 @@ export interface IeltsReadingQuestionair extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'ielts-listening.audio-url': IeltsListeningAudioUrl;
       'ielts-listening.audio': IeltsListeningAudio;
       'ielts-listening.filling': IeltsListeningFilling;
       'ielts-listening.image': IeltsListeningImage;
+      'ielts-listening.img-url': IeltsListeningImgUrl;
       'ielts-listening.multiple-choice': IeltsListeningMultipleChoice;
       'ielts-listening.questionair': IeltsListeningQuestionair;
       'ielts-reading.filling': IeltsReadingFilling;
+      'ielts-reading.image': IeltsReadingImage;
       'ielts-reading.multiple-choice': IeltsReadingMultipleChoice;
       'ielts-reading.paragraph': IeltsReadingParagraph;
       'ielts-reading.questionair': IeltsReadingQuestionair;

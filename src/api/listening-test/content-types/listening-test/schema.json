@@ -15,11 +15,11 @@
     "Listening": {
       "type": "dynamiczone",
       "components": [
-        "ielts-listening.audio",
         "ielts-listening.questionair",
         "ielts-listening.filling",
         "ielts-listening.multiple-choice",
-        "ielts-listening.image"
+        "ielts-listening.audio-url",
+        "ielts-listening.img-url"
       ]
     },
     "test": {

@@ -18,7 +18,8 @@
         "ielts-reading.filling",
         "ielts-reading.multiple-choice",
         "ielts-reading.paragraph",
-        "ielts-reading.questionair"
+        "ielts-reading.questionair",
+        "ielts-reading.image"
       ]
     },
     "test": {
