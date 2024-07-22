@@ -958,6 +958,7 @@ export interface ApiStudentTestStudentTest extends Schema.CollectionType {
       'manyToOne',
       'api::test.test'
     >;
+    answer_data: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

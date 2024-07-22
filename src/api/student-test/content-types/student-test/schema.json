@@ -36,6 +36,9 @@
       "relation": "manyToOne",
       "target": "api::test.test",
       "inversedBy": "student_tests"
+    },
+    "answer_data": {
+      "type": "json"
     }
   }
 }
